@@ -188,19 +188,6 @@ void loop()
     // Restart screensaver timer
     screenTimer = millis();
   }
-
-  /*
-  // Will not display in splash screen?
-  while (  (millis() - screenTimer) > 5*1000 )
-  {
-     //displayScreen(1);
-     
-     // Restart timer
-    //screenTimer = millis();
-    
-   //mtestdrawbitmap(logo16_glcd_bmp, LOGO16_GLCD_HEIGHT, LOGO16_GLCD_WIDTH);
-  }
-  */
   
 }
 
@@ -344,14 +331,6 @@ void doEncoder1() {
     if ( counter % 2 ) // if even (every 2 times counter increments)
     incrementer--;
   }
-  
-  /*
-  // limits to three digits
-  if ( counter > 2000 )
-    counter = 2000;
-  if ( counter < 0 )
-    counter = 0;
-    */
     
   /* (current doEncoder function uses one interrupt to 
       measure two amounts of rotation per indent, using
@@ -372,8 +351,6 @@ void doEncoder1() {
     nSides += incrementer;
   else if ( Mode == 3 )
     nModifier += incrementer;
-
-  //problem: counter causes number to be changed to previous value when knob turned
 
   screenRefresh = 1;
   
